@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA SAMP MARKET</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        :root {
+            --gta-yellow: #FFC600;
+            --gta-blue: #00A2FF;
+            --gta-pink: #FF00A2;
+            --gta-dark: #0A0A0A;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gta-dark);
+            color: white;
+            background-image: url('https://i.imgur.com/5XJQb0a.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            border-top: 3px solid var(--gta-yellow);
+            border-bottom: 3px solid var(--gta-yellow);
+        }
+        
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--gta-yellow);
+            text-shadow: 0 0 10px var(--gta-blue);
+            font-size: 2.5rem;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .item-card {
+            background: rgba(10, 10, 10, 0.9);
+            border: 3px solid var(--gta-yellow);
+            padding: 0;
+            transition: all 0.3s;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gta-pink);
+        }
+        
+        .item-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--gta-yellow);
+        }
+        
+        .item-content {
+            padding: 15px;
+        }
+        
+        .item-title {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--gta-yellow);
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        
+        .item-price {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--gta-blue);
+            font-size: 0.9rem;
+        }
+        
+        .buy-btn {
+            background: linear-gradient(to right, var(--gta-blue), var(--gta-pink));
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid var(--gta-yellow);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GTA SAMP MARKET</h1>
+            <p style="color: var(--gta-blue);">Купить вирты для San Andreas Multiplayer</p>
+        </header>
+        
+        <div class="items-grid">
+            <div class="item-card">
+                <img src="https://i.imgur.com/9zJmY3T.jpg" alt="Infernus" class="item-image">
+                <div class="item-content">
+                    <h3 class="item-title">INFERNUS</h3>
+                    <p>Спортивный автомобиль</p>
+                    <p class="item-price">$500,000</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <img src="https://i.imgur.com/5xJkQ2L.jpg" alt="Mansion" class="item-image">
+                <div class="item-content">
+                    <h3 class="item-title">OCEAN VIEW</h3>
+                    <p>Особняк у океана</p>
+                    <p class="item-price">$2,500,000</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <img src="https://i.imgur.com/8KmTt3R.jpg" alt="AK-47" class="item-image">
+                <div class="item-content">
+                    <h3 class="item-title">AK-47</h3>
+                    <p>Штурмовая винтовка</p>
+                    <p class="item-price">$75,000</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <img src="https://i.imgur.com/9QZqY4J.jpg" alt="Club" class="item-image">
+                <div class="item-content">
+                    <h3 class="item-title">MALIBU CLUB</h3>
+                    <p>Ночной клуб</p>
+                    <p class="item-price">$5,000,000</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p style="color: var(--gta-blue);">© 2023 GTA SAMP MARKET</p>
+            <p>Связь: discord.gg/вашсервер</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Простая обработка покупки
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.closest('.item-card');
+                const title = item.querySelector('.item-title').textContent;
+                const price = item.querySelector('.item-price').textContent;
+                
+                alert(`Вы выбрали: ${title}\nЦена: ${price}\n\nДля покупки посетите наш Discord сервер.`);
+            });
+        });
+    </script>
+</body>
+</html>
